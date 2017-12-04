@@ -22,7 +22,7 @@
       </div>
       <br />
       <div class="search-results">
-        <div class="search-result" ng-repeat="searchResult in searchResults">
+        <div md-whiteframe class="search-result" ng-repeat="searchResult in searchResults">
           <img ng-src={{searchResult.owner.avatar_url}} alt="Repo owner"/>
           <h2 class="name">{{searchResult.name}}</h2>
           <h4 class="author">{{searchResult.owner.login}}</h4>

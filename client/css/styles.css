@@ -26,6 +26,10 @@ h1 {
   width: 100%;
 }
 
+.search-result h2, h4, a, p {
+  margin-left: 1%;
+}
+
 p {
   display: flex;
   align-items: center;
