@@ -17,7 +17,7 @@
         <p>Enter a search term and click the button to display relevant repos!</p>
         <form>
           <md-input-container>
-            <input type="text" ng-model="searchTerm" placeholder="Search GitHub repos..." />
+            <input type="text" ng-model="searchTerm" autocomplete="off" placeholder="Search GitHub repos..." />
           </md-input-container>
           <md-button class="md-primary" type="submit" ng-click="getRepos()">Fetch repos!</md-button>
         </form>
