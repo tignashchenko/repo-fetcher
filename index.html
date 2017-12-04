@@ -5,12 +5,23 @@
   </head>
   <body ng-app="repoFetcher">
     <div ng-controller="repoFetcherCtrl">
-      <h1>GitHub Repo Fetcher</h1>
-      <p>Enter a search term and click the button to display relevant repos!</p>
-      <form>
-        <input type="text" ng-model="searchTerm" placeholder="Search GitHub repos..." />
-        <button type="submit" ng-click="getRepos()">Fetch repos!</button>
-      </form>
+      <div class="search">
+        <h1>GitHub Repo Fetcher</h1>
+        <p>Enter a search term and click the button to display relevant repos!</p>
+        <form>
+          <input type="text" ng-model="searchTerm" placeholder="Search GitHub repos..." />
+          <button type="submit" ng-click="getRepos()">Fetch repos!</button>
+        </form>
+      </div>
+      <div class="search-results" ng-repeat="searchResult in searchResults | orderBy: 'name'">
+        <img ng-src={{searchResult.owner.avatar_url}} alt="Repo owner"/>
+        <h4>{{searchResult.owner.login}}</h4>
+        <h2>{{searchResult.name}}</h2>
+        <p>{{searchResult.html_url}}</p>
+        <p>Private: {{searchResult.private}}</p>
+        <p>Stars: {{searchResult.stargazers_count}}</p>
+        <p>Open issues: {{searchResult.open_issues}}</p>
+      </div> 
     </div>
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="client/repo-fetcher.module.js"></script>
