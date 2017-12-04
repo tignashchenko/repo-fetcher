@@ -28,7 +28,6 @@ angular.module('repoFetcher', ['ngMaterial'])
             }
           });
           $scope.searchTerm = '';
-          console.log($scope.searchResults);
         }, function(error) {
           throw error;
         });

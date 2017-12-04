@@ -9,23 +9,27 @@
   <body ng-app="repoFetcher">
     <div ng-controller="repoFetcherCtrl">
       <div class="search">
-        <h1>GitHub Repo Fetcher</h1>
+        <md-toolbar>
+          <h1>GitHub Repo Fetcher</h1>
+        </md-toolbar>
         <p>Enter a search term and click the button to display relevant repos!</p>
         <form>
-          <input type="text" ng-model="searchTerm" placeholder="Search GitHub repos..." />
-          <button type="submit" ng-click="getRepos()">Fetch repos!</button>
+          <md-input-container>
+            <input type="text" ng-model="searchTerm" placeholder="Search GitHub repos..." />
+          </md-input-container>
+          <md-button class="md-primary" type="submit" ng-click="getRepos()">Fetch repos!</md-button>
         </form>
       </div>
       <br />
       <div class="search-results">
         <div class="search-result" ng-repeat="searchResult in searchResults">
           <img ng-src={{searchResult.owner.avatar_url}} alt="Repo owner"/>
-          <h2>{{searchResult.name}}</h2>
-          <h4>{{searchResult.owner.login}}</h4>
-          <p>{{searchResult.html_url}}</p>
-          <p><i class="material-icons">visibility_off</i> : {{searchResult.private}}</p>
-          <p><i class="material-icons">stars</i> : {{searchResult.stargazers_count}}</p>
-          <p><i class="material-icons">error</i> : {{searchResult.open_issues}}</p>
+          <h2 class="name">{{searchResult.name}}</h2>
+          <h4 class="author">{{searchResult.owner.login}}</h4>
+          <a href="{{searchResult.html_url}}" target="_blank" class="url">{{searchResult.html_url}}</a> 
+          <p class="private"><i class="material-icons">visibility_off</i> : {{searchResult.private}}</p>
+          <p class="stars"><i class="material-icons">stars</i> : {{searchResult.stargazers_count}}</p>
+          <p class="issues"><i class="material-icons">error</i> : {{searchResult.open_issues}}</p>
         </div>
       </div> 
     </div>
