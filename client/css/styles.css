@@ -26,6 +26,13 @@ h1 {
   width: 100%;
 }
 
+.url {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+}
+
 .search-result h2, h4, a, p {
   margin-left: 1%;
 }
@@ -35,7 +42,7 @@ p {
   align-items: center;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 500px) {
   .search-result img, .url, .private, .issues {
     display: none;
   }
