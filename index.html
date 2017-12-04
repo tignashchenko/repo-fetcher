@@ -3,7 +3,8 @@
   <head>
     <title>GitHub Repo Fetcher</title>
     <link rel="stylesheet" type="text/css" href="node_modules/angular-material/angular-material.min.css" />
-    <link rel="spreadsheet" type="text/css" href="client/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="client/css/styles.css" />
   </head>
   <body ng-app="repoFetcher">
     <div ng-controller="repoFetcherCtrl">
@@ -16,14 +17,14 @@
         </form>
       </div>
       <br />
-      <div class="search-results" ng-repeat="searchResult in searchResults">
-        <div class="search-result">
+      <div class="search-results">
+        <div class="search-result" ng-repeat="searchResult in searchResults">
           <img ng-src={{searchResult.owner.avatar_url}} alt="Repo owner"/>
           <h2>{{searchResult.name}}</h2>
           <h4>{{searchResult.owner.login}}</h4>
           <p>{{searchResult.html_url}}</p>
-          <p>Private: {{searchResult.private}}</p>
-          <p>Stars: {{searchResult.stargazers_count}}</p>
+          <p><i class="material-icons">visibility_off</i> : {{searchResult.private}}</p>
+          <p><i class="material-icons">stars</i> : {{searchResult.stargazers_count}}</p>
           <p>Open issues: {{searchResult.open_issues}}</p>
         </div>
       </div> 

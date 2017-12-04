@@ -1,0 +1,24 @@
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-results {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2% 2%;
+}
+
+.search-result {
+  width: 33%;
+}
+
+.search-result img {
+  width: 100%;
+}
+
+p {
+  display: flex;
+  align-items: center;
+}
