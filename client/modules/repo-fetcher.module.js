@@ -1,4 +1,4 @@
-angular.module('repoFetcher', [])
+angular.module('repoFetcher', ['ngMaterial'])
   .controller('repoFetcherCtrl', function($scope, $http) {
     $scope.searchTerm = '';
     $scope.searchResults = null;
