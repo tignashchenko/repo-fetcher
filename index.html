@@ -13,11 +13,12 @@
           <button type="submit" ng-click="getRepos()">Fetch repos!</button>
         </form>
       </div>
+      <br />
       <div class="search-results" ng-repeat="searchResult in searchResults">
         <div class="search-result">
           <img ng-src={{searchResult.owner.avatar_url}} alt="Repo owner"/>
-          <h4>{{searchResult.owner.login}}</h4>
           <h2>{{searchResult.name}}</h2>
+          <h4>{{searchResult.owner.login}}</h4>
           <p>{{searchResult.html_url}}</p>
           <p>Private: {{searchResult.private}}</p>
           <p>Stars: {{searchResult.stargazers_count}}</p>

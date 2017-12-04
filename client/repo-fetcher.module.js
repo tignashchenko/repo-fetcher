@@ -11,6 +11,10 @@ angular.module('repoFetcher', [])
       
       $http.get(`https://api.github.com/search/repositories?q=${$scope.searchTerm}`)
         .then(function(results) {
+          if (!results.data.items.length) {
+            alert('No results for given search term!');
+            return;
+          }
           $scope.searchResults = results.data.items.sort(function(a, b) {
             var name1 = a.name.toLowerCase();
             var name2 = b.name.toLowerCase();
@@ -23,9 +27,10 @@ angular.module('repoFetcher', [])
               return 0;
             }
           });
+          $scope.searchTerm = '';
           console.log($scope.searchResults);
         }, function(error) {
-          console.log(error);
+          throw error;
         });
     }
   });
