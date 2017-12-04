@@ -11,7 +11,8 @@
 }
 
 .search-result {
-  width: 33%;
+  width: 25%;
+  margin: 20px 2%;
 }
 
 .search-result img {
